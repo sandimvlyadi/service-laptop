@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Client extends CI_Controller {
+class Teknisi extends CI_Controller {
 
 	private $userData;
 
@@ -9,7 +9,7 @@ class Client extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('login_model', 'login');
-		$this->load->model('client_model', 'model');
+		$this->load->model('teknisi_model', 'model');
 
 		$this->userData = array(
 			'session'	=> $this->session->userdata('userSession'),
@@ -27,7 +27,7 @@ class Client extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('client');
+		$this->load->view('teknisi');
 	}
 
 	public function edit($id = 0)
@@ -88,18 +88,6 @@ class Client extends CI_Controller {
 		);
 
 		$response = $this->model->select($id);
-
-		echo json_encode($response, JSON_PRETTY_PRINT);
-	}
-
-	public function kode_client()
-	{
-		$response 	= array(
-			'result'	=> false,
-			'msg'		=> ''
-		);
-
-		$response = $this->model->kode_client();
 
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}

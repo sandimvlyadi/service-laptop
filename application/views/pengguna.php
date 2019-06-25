@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admina | Type Monitor</title>
+  <title>Admina | Pengguna</title>
   <?php $this->load->view('script-head'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>Type Monitor</h1>
+      <h1>Pengguna</h1>
     </section>
 
     <!-- Main content -->
@@ -45,8 +45,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Nama</th>
-                      <th>Keterangan</th>
+                      <th>Username</th>
+                      <th>Display Name</th>
+                      <th>Kontak</th>
+                      <th>Level</th>
                       <th>Aksi</th>
                     </tr>
                     </thead>
@@ -70,12 +72,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <form id="formData">
                 <input id="csrf" type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="" />
                 <div class="form-group">
-                  <label>Nama Type</label>
-                  <input type="text" name="nama_type" class="form-control" placeholder="Nama Type" required></input>
+                  <label>Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Username" required></input>
                 </div>
                 <div class="form-group">
-                  <label>Keterangan</label>
-                  <textarea name="keterangan" class="form-control" placeholder="Keterangan"></textarea>
+                  <label>Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="Password"></input>
+                </div>
+                <div class="form-group">
+                  <label>Repeat Password</label>
+                  <input type="password" name="repeat_password" class="form-control" placeholder="Repeat Password"></input>
+                </div>
+                <div class="form-group">
+                  <label>Display Name</label>
+                  <input type="text" name="display_name" class="form-control" placeholder="Display Name" required></input>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email"></input>
+                </div>
+                <div class="form-group">
+                  <label>Kontak</label>
+                  <input type="text" name="kontak" class="form-control" placeholder="Kontak"></input>
+                </div>
+                <div class="form-group">
+                  <label>Alamat</label>
+                  <textarea name="alamat" class="form-control" placeholder="Alamat"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Level Pengguna</label>
+                  <select name="id_level_pengguna" class="form-control" style="width: 100%;"></select>
                 </div>
               </form>
             </div>
@@ -102,6 +128,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- ./wrapper -->
 
 <?php $this->load->view('script-foot'); ?>
-<script src="<?php echo base_url('assets/admina/js/admina.type.monitor.js'); ?>"></script>
+<script src="<?php echo base_url('assets/admina/js/admina.pengguna.js'); ?>"></script>
 </body>
 </html>

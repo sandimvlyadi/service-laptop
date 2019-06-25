@@ -8,6 +8,7 @@
       <li class="li-dashboard"><a href="<?php echo base_url('dashboard/'); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class="li-service"><a href="<?php echo base_url('service/'); ?>"><i class="fa fa-cogs"></i> <span>Service</span></a></li>
       <li class="li-client"><a href="<?php echo base_url('client/'); ?>"><i class="fa fa-users"></i> <span>Client</span></a></li>
+      <li class="li-teknisi"><a href="<?php echo base_url('teknisi/'); ?>"><i class="fa fa-user-md"></i> <span>Teknisi</span></a></li>
       <li class="treeview li-stock">
         <a href="#">
           <i class="fa fa-database"></i> <span>Stock</span>

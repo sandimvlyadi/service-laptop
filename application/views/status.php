@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admina | Type Monitor</title>
+  <title>Admina | Status</title>
   <?php $this->load->view('script-head'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>Type Monitor</h1>
+      <h1>Status</h1>
     </section>
 
     <!-- Main content -->
@@ -45,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <thead>
                     <tr>
                       <th>No.</th>
+                      <th>Kategori</th>
                       <th>Nama</th>
                       <th>Keterangan</th>
                       <th>Aksi</th>
@@ -70,8 +71,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <form id="formData">
                 <input id="csrf" type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="" />
                 <div class="form-group">
-                  <label>Nama Type</label>
-                  <input type="text" name="nama_type" class="form-control" placeholder="Nama Type" required></input>
+                  <label>Kategori</label>
+                  <select name="id_kategori" class="form-control" style="width: 100%;"></select>
+                </div>
+                <div class="form-group">
+                  <label>Nama Status</label>
+                  <input type="text" name="status" class="form-control" placeholder="Nama Status" required></input>
                 </div>
                 <div class="form-group">
                   <label>Keterangan</label>
@@ -102,6 +107,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- ./wrapper -->
 
 <?php $this->load->view('script-foot'); ?>
-<script src="<?php echo base_url('assets/admina/js/admina.type.monitor.js'); ?>"></script>
+<script src="<?php echo base_url('assets/admina/js/admina.status.js'); ?>"></script>
 </body>
 </html>
