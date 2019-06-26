@@ -32,3 +32,10 @@
 <script src="<?php echo base_url('assets/plugins/timepicker/bootstrap-timepicker.min.js'); ?>"></script>
 <!-- iCheck 1.0.1 -->
 <script src="<?php echo base_url('assets/plugins/iCheck/icheck.min.js'); ?>"></script>
+<script type="text/javascript">
+	<?php
+	if ($this->agent->is_browser()) { ?>
+		$('.box-body .col-xs-12').css('overflow-y', 'auto');
+	<?php }
+	?>
+</script>

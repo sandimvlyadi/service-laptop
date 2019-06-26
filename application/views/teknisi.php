@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>No.</th>
                       <th>Display Name</th>
                       <th>Kontak</th>
-                      <th>Aksi</th>
+                      <th style="min-width: 75px;">Aksi</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -128,4 +128,16 @@ class Master_status extends CI_Controller {
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}
 
+	public function stock_spare_part($id = 0)
+	{
+		$response 	= array(
+			'result'	=> false,
+			'msg'		=> ''
+		);
+
+		$response = $this->model->stock_spare_part($id);
+
+		echo json_encode($response, JSON_PRETTY_PRINT);
+	}
+
 }

@@ -36,15 +36,16 @@ class Stock_spare_part extends CI_Controller {
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}
 
-	public function datatable()
+	public function datatable($id = 0)
 	{
 		$response 	= array(
 			'result'	=> false,
 			'msg'		=> ''
 		);
 
-		$param		= $_GET;
-		$response 	= $this->model->datatable($param);
+		$param 					= $_GET;
+		$param['id_spare_part'] = $id;
+		$response 				= $this->model->datatable($param);
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}
 

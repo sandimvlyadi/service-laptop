@@ -74,6 +74,10 @@ class Stock_laptop_model extends CI_Model {
 
         $list = $this->_list($data);
         if (count($list) > 0) {
+            for ($i=0; $i < count($list); $i++) { 
+                    $list[$i]['harga'] = 'Rp. ' . number_format($list[$i]['harga'], 0, ',', '.');
+                }
+
             $result = array(
                 'draw'              => $data['draw'],
                 'recordsTotal'      => $this->_all($data),

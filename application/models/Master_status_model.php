@@ -291,4 +291,30 @@ class Master_status_model extends CI_Model {
         return $result;
     }
 
+    function stock_spare_part($id = 0)
+    {
+        $result = array(
+            'result'    => false,
+            'msg'       => ''
+        );
+
+        $q = "";
+        if ($id == 0) {
+            $q = "SELECT * FROM `status` WHERE `id_kategori` = 4;";
+        } else{
+            $q = "SELECT * FROM `status` WHERE `id_kategori` = 4 AND `id` = '". $this->db->escape_str($id) ."';";
+        }
+        $r = $this->db->query($q)->result_array();
+        if (count($r) > 0) {
+            $result['result'] = true;
+            $result['data'] = $r;
+
+            if (count($r) == 1 && $id != 0) {
+                $result['data'] = $r[0];
+            }
+        }
+
+        return $result;
+    }
+
 }

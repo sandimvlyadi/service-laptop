@@ -32,21 +32,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Main content -->
     <section class="content">
 
-      <!-- Default box -->
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+      <div class="row">
+        <div class="col-12">
+        
+          <div id="tableStockLaptop" class="row col-md-6">
+            <div class="col-xs-12">
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3>Data Stock Laptop</h3>
+                </div>
+                <div class="box-body">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <table id="dataTableLaptop" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                          <th>No.</th>
+                          <th>Merk</th>
+                          <th>Spesifikasi</th>
+                          <th>Kondisi</th>
+                          <th>Harga</th>
+                          <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tableStockSparePart" class="row col-md-6">
+            <div class="col-xs-12">
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3>Data Stock Spare Part</h3>
+                </div>
+                <div class="box-body">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <table id="dataTableSparePart" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                          <th>No.</th>
+                          <th>Nama Spare Part</th>
+                          <th>Total Stock</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="box-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
 
     </section>
     <!-- /.content -->
@@ -59,5 +106,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- ./wrapper -->
 
 <?php $this->load->view('script-foot'); ?>
+<script src="<?php echo base_url('assets/admina/js/admina.dashboard.js'); ?>"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <th>Kategori</th>
                       <th>Nama</th>
                       <th>Keterangan</th>
-                      <th>Aksi</th>
+                      <th style="min-width: 75px;">Aksi</th>
                     </tr>
                     </thead>
                     <tbody>
