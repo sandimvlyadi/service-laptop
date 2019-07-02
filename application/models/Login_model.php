@@ -83,14 +83,15 @@ class Login_model extends CI_Model {
       if ($this->db->simple_query($q)) {
         $this->session->set_userdata(
           'userSession', array(
-            'id'          => $r[0]['id'],
-            'username'    => $r[0]['username'],
-            'displayName' => $r[0]['display_name'],
-            'email'       => $r[0]['email'],
-            'kontak'      => $r[0]['kontak'],
-            'alamat'      => $r[0]['alamat'],
-            'level'       => $r[0]['nama_level'],
-            'token'       => $token
+            'id'              => $r[0]['id'],
+            'username'        => $r[0]['username'],
+            'displayName'     => $r[0]['display_name'],
+            'displayPicture'  => $r[0]['display_picture'],
+            'email'           => $r[0]['email'],
+            'kontak'          => $r[0]['kontak'],
+            'alamat'          => $r[0]['alamat'],
+            'level'           => $r[0]['nama_level'],
+            'token'           => $token
           )
         );
       }
