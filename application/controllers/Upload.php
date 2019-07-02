@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Upload extends CI_Controller {
 
 	private $userData;
 
@@ -9,7 +9,7 @@ class Profile extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('login_model', 'login');
-		$this->load->model('profile_model', 'model');
+		$this->load->model('upload_model', 'model');
 
 		$this->userData = array(
 			'session'	=> $this->session->userdata('userSession'),
@@ -25,15 +25,7 @@ class Profile extends CI_Controller {
 		}
 	}
 
-	public function index()
-	{
-		$id = $this->userData['session']['id'];
-		$data = $this->model->data($id);
-
-		$this->load->view('profile', $data);
-	}
-
-	public function save_data()
+	public function display_picture()
 	{
 		$response 	= array(
 			'result'	=> false,
@@ -41,26 +33,9 @@ class Profile extends CI_Controller {
 		);
 
 		$param = array(
-			'userData' => $this->userData,
-			'postData' => $this->security->xss_clean($_POST)
+			'userData' => $this->userData
 		);
-		$response = $this->model->save_data($param);
-
-		echo json_encode($response, JSON_PRETTY_PRINT);
-	}
-
-	public function save_password()
-	{
-		$response 	= array(
-			'result'	=> false,
-			'msg'		=> ''
-		);
-
-		$param = array(
-			'userData' => $this->userData,
-			'postData' => $this->security->xss_clean($_POST)
-		);
-		$response = $this->model->save_password($param);
+		$response = $this->model->display_picture($param);
 
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}

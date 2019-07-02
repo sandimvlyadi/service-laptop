@@ -1,0 +1,27 @@
+.display-picture {
+	opacity: 1;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	cursor: pointer;
+}
+
+.col-xs-4:hover .display-picture {
+	opacity: 0.5;
+}
+
+.col-xs-4 p {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	color: #222d32;
+	cursor: pointer;
+}
+
+.col-xs-4:hover p {
+	opacity: 1;
+}
